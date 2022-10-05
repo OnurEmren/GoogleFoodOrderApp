@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startOrderFragment">
+
+
+    <fragment
+        android:id="@+id/startOrderFragment"
+        android:name="com.onuremren.googleyemekapp.ui.StartOrderFragment"
+        android:label="Hoş Geldiniz"
+        tools:layout="@layout/fragment_start_order" >
+        <action
+            android:id="@+id/action_startOrderFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_startOrderFragment_to_oldOrderListFragment"
+            app:destination="@id/oldOrderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeMenuFragment"
+        android:name="com.onuremren.googleyemekapp.ui.MainCourseMenuFragment"
+        android:label="Ana Yemekler (Pazartesi)"
+        tools:layout="@layout/fragment_main_course_menu" >
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
+            app:destination="@id/sideMenuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideMenuFragment"
+        android:name="com.onuremren.googleyemekapp.ui.SideMenuFragment"
+        android:label="Yardımcı Yemekler (Pazartesi)"
+        tools:layout="@layout/fragment_side_menu" >
+        <action
+            android:id="@+id/action_sideMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/entreeMenuFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_entreeMenuFragment"
+            app:destination="@id/entreeMenuFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/dayFragment"
+        android:name="com.onuremren.googleyemekapp.ui.DayFragment"
+        android:label="Günler"
+        tools:layout="@layout/fragment_day" >
+        <action
+            android:id="@+id/action_dayFragment_to_entreeMenuFragment"
+            app:destination="@id/entreeMenuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_dayFragment_to_tuesdayMainCourseMenuFragment"
+            app:destination="@id/tuesdayMainCourseMenuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_dayFragment_to_wednesdayMain"
+            app:destination="@id/wednesdayMain"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_dayFragment_to_TMainFragment"
+            app:destination="@id/TMainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_dayFragment_to_FMainFragment"
+            app:destination="@id/FMainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_dayFragment_to_stMainFragment"
+            app:destination="@id/stMainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/tuesdayMainCourseMenuFragment"
+        android:name="com.onuremren.googleyemekapp.tuesdayUi.TuesdayMainCourseMenuFragment"
+        android:label="Ana Yemekler (Salı)" >
+        <action
+            android:id="@+id/action_tuesdayMainCourseMenuFragment_to_tuesdaySideMenuFragment"
+            app:destination="@id/tuesdaySideMenuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_tuesdayMainCourseMenuFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/tuesdaySideMenuFragment"
+        android:name="com.onuremren.googleyemekapp.tuesdayUi.TuesdaySideMenuFragment"
+        android:label="Yardımcı Yemekler (Salı)" >
+        <action
+            android:id="@+id/action_tuesdaySideMenuFragment_to_tuesdayMainCourseMenuFragment"
+            app:destination="@id/tuesdayMainCourseMenuFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_tuesdaySideMenuFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_tuesdaySideMenuFragment_to_tuesdayMainCourseMenuFragment2"
+            app:destination="@id/tuesdayMainCourseMenuFragment" />
+        <action
+            android:id="@+id/action_tuesdaySideMenuFragment_to_tuesdayMainCourseMenuFragment3"
+            app:destination="@id/tuesdayMainCourseMenuFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/tuesdayAccompanimentFragment"
+        android:name="com.onuremren.googleyemekapp.tuesdayUi.TuesdayAccompanimentFragment"
+        android:label="Garnitürler" >
+        <action
+            android:id="@+id/action_tuesdayAccompanimentFragment_to_tuesdayCheckOutFragment"
+            app:destination="@id/tuesdayCheckOutFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_tuesdayAccompanimentFragment_to_tuesdayCheckOutFragment2"
+            app:destination="@id/tuesdayCheckOutFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_tuesdayAccompanimentFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/tuesdayCheckOutFragment"
+        android:name="com.onuremren.googleyemekapp.tuesdayUi.TuesdayCheckOutFragment"
+        android:label="Hesap Özeti" >
+        <action
+            android:id="@+id/action_tuesdayCheckOutFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_tuesdayCheckOutFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_tuesdayCheckOutFragment_to_listOldOrderFragment"
+            app:destination="@id/listOldOrderFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/wednesdayMain"
+        android:name="com.onuremren.googleyemekapp.wednesdayUi.WednesdayMain"
+        android:label="Ana Yemekler (Çarşamba)" >
+        <action
+            android:id="@+id/action_wednesdayMain_to_wednesdaySideFragment"
+            app:destination="@id/wednesdaySideFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_wednesdayMain_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/wednesdaySideFragment"
+        android:name="com.onuremren.googleyemekapp.wednesdayUi.WednesdaySideFragment"
+        android:label="Yardımcı Yemekler (Çarşamba)"
+        tools:layout="@layout/fragment_wednesday_side" >
+        <action
+            android:id="@+id/action_wednesdaySideFragment_to_wednesdayMain"
+            app:destination="@id/wednesdayMain"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_wednesdaySideFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/TMainFragment"
+        android:name="com.onuremren.googleyemekapp.thuesdayUi.TMainFragment"
+        android:label="Ana Yemekler (Perşembe)"
+        tools:layout="@layout/fragment_t_main" >
+        <action
+            android:id="@+id/action_TMainFragment_to_TSideFragment"
+            app:destination="@id/TSideFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_TMainFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/TSideFragment"
+        android:name="com.onuremren.googleyemekapp.thuesdayUi.TSideFragment"
+        android:label="Yardımcı Yemekler (Perşembe)"
+        tools:layout="@layout/fragment_t_side">
+        <action
+            android:id="@+id/action_TSideFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_TSideFragment_to_TMainFragment"
+            app:destination="@id/TMainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/FMainFragment"
+        android:name="com.onuremren.googleyemekapp.fridayUi.FMainFragment"
+        android:label="Ana Yemekler (Cuma)" >
+        <action
+            android:id="@+id/action_FMainFragment_to_FSideFragment"
+            app:destination="@id/FSideFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_FMainFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/FSideFragment"
+        android:name="com.onuremren.googleyemekapp.fridayUi.FSideFragment"
+        android:label="Yardımcı Yemekler (Cuma)"
+        tools:layout="@layout/fragment_f_side" >
+        <action
+            android:id="@+id/action_FSideFragment_to_FMainFragment"
+            app:destination="@id/FMainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_FSideFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/stMainFragment"
+        android:name="com.onuremren.googleyemekapp.saturdayUi.StMainFragment"
+        android:label="Ana Yemekler (Cumartesi)" >
+        <action
+            android:id="@+id/action_stMainFragment_to_dayFragment"
+            app:destination="@id/dayFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_stMainFragment_to_stSideFragment"
+            app:destination="@id/stSideFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/stSideFragment"
+        android:name="com.onuremren.googleyemekapp.saturdayUi.StSideFragment"
+        android:label="Yardımcı Yemekler (Cumartesi)" >
+        <action
+            android:id="@+id/action_stSideFragment_to_stMainFragment"
+            app:destination="@id/stMainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/from_left" />
+        <action
+            android:id="@+id/action_stSideFragment_to_tuesdayAccompanimentFragment"
+            app:destination="@id/tuesdayAccompanimentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOldOrderFragment"
+        android:name="com.onuremren.googleyemekapp.ui.ListOldOrderFragment"
+        android:label="Siparişi Kaydet/Sil"
+        tools:layout="@layout/fragment_list_old_order" >
+
+        <argument
+            android:name="info"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_listOldOrderFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+
+         />
+        <action
+            android:id="@+id/action_listOldOrderFragment_to_tuesdayCheckOutFragment"
+            app:destination="@id/tuesdayCheckOutFragment"
+            app:popUpTo="@id/tuesdayCheckOutFragment" />
+        <action
+            android:id="@+id/action_listOldOrderFragment_to_oldOrderListFragment"
+            app:destination="@id/oldOrderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldOrderListFragment"
+        android:name="com.onuremren.googleyemekapp.ui.OldOrderListFragment"
+        android:label="Geçmiş Siparişlerim"
+        tools:layout="@layout/fragment_order_detail" >
+        <action
+            android:id="@+id/action_oldOrderListFragment_to_listOldOrderFragment"
+            app:destination="@id/listOldOrderFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/tuesdayCheckOutFragment" />
+        <action
+            android:id="@+id/from_old_to_start"
+            app:destination="@id/startOrderFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_oldOrderListFragment_to_tuesdayCheckOutFragment"
+            app:destination="@id/tuesdayCheckOutFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/daoOrderFragment"
+        android:name="com.onuremren.googleyemekapp.ui.DaoOrderFragment"
+        android:label="DaoOrderFragment" >
+        <argument
+            android:name="info"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>
